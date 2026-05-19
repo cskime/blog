@@ -1,36 +1,98 @@
-# Site-wide settings
+# Site settings
+locale: "ko-KR"
+title: "Code Journey"
+title_separator: "-"
+subtitle: "개발과 학습의 기록"
+name: "cskime"
+description: "History of my journey in coding and learning"
+url: "https://cskime.github.io"
+baseurl: "/blog"
+repository: "cskime/blog"
+timezone: "Asia/Seoul"
 
-title: Code Journey
+# Theme
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "catppuccin_latte"
+
+# Search
+search: true
+search_full_content: true
+
+# Author profile
 author:
-  name: cskime
-  email: kcsol1005@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  History of my journey in coding and learning
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://cskime.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+  name: "cskime"
+  bio: "개발하며 배운 내용을 기록합니다."
+  location: "Seoul, Korea"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/cskime"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/chamsolkim/"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:kcsol1005@gmail.com"
 
-# Build settings
+# Footer
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/cskime"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/chamsolkim/"
 
-theme: minima
+# Output
+permalink: /:categories/:title/
+paginate: 5
+paginate_path: /page:num/
+
+# Collections
+include:
+  - _pages
+
+# Plugins supported by GitHub Pages
 plugins:
+  - jekyll-paginate
   - jekyll-feed
+  - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-include-cache
 
-## Disable deprecation warnings
+# Archives
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+# Build
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
 sass:
   quiet_deps: true
-  silence_deprecations: [import]
-
-# Minima-specific settings (v3 or above)
-
-minima:
-  skin: auto
-  nav_pages:
-    - about.md
-  social_links:
-    - title: "GitHub"
-      icon: "github"
-      url: "https://github.com/cskime"
-    - title: "LinkedIn"
-      icon: "linkedin"
-      url: "https://www.linkedin.com/in/chamsolkim/"
